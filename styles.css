@@ -1,0 +1,58 @@
+.navigationbar {
+  /* This is making a border around some text while having a colored background for just inside the border */
+border: solid 5px black;
+border-radius: 5px;
+background: #f35f05;
+padding: 10px 100px 10px 100px; /* this is expanding the border to the left and the right */
+text-align: center;
+}
+
+body {
+  background-color: #fffdd0;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center; /* Setting the title of the page, the h1 element to the center */
+}
+
+.aboutmetext {
+text-align: center; /* Aligns the text to the center */
+  border: 5px solid black; /* adds a 50 pixel border around this class */
+  border-radius: 25px; /* curves the borders edges a bit */
+  margin: 100px; /* Moves the border around basically. Different from padding */
+  font-size: 30px;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottombar {
+  /* This is making a border around some text while having a colored background for just inside the border */
+position: absolute;
+bottom: 0;
+border: solid 5px black;
+border-radius: 5px;
+background: #f35f05;
+padding: 10px 100px 10px 100px; /* this is expanding the border to the left and the right */
+text-align: center;
+}
+
+a:link {
+  color: blue; /* This will style a normal, unvisited link */
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple; /* This will style a link the user has visited */
+}
+
+a:hover {
+  color: red; /* This will style a link when the user mouses over it */
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow; /* This will style a link the moment it is clicked */
+}

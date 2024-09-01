@@ -31,5 +31,5 @@ let quality = prompt("Was the service quality great, ok, or poor?"); // user ent
 if (checkAmount(amount) && checkQuality(quality)) { // checking user inputs for amount and quality in this line
   let tip = calculateTip(amount, quality); // calculating the tip
   tip = tip.toFixed(2); // We are limiting the decimal points to just two points. 60.00, or 23.45.
-  alert("The tip is $" + tip); // display a popup for the tip.
+  alert(`For a service of $${amount}, a ${quality} service quality suggests a tip of $${tip}.`); // display a popup for the tip.
 } //ENDDDDD

@@ -1,24 +1,35 @@
-for (let count = 0; count <= 10; count++) { // THis is a loop that will essentially count from 0-10
-
-  if (count % 2 === 0) { // This will check if the current number in the loop is even or odd
-    document.write("Count " + count + " is even<br>"); // display that the count is even, line break
-  } else { // UNLESS IF
-    document.write("Count " + count + " is odd<br>"); // if odd, display that the number is odd
+function checkQuality(quality) { // this is a function that will check if the entered service quality value is valid.
+  if (quality !== "great" && quality !== "ok" && quality !== "poor") { // If not acceptable answer,
+    alert("Please enter 'great', 'ok', or 'poor'."); // display this error message asking the user to try again
+    return false; //
   }
-} // conditions and loop
+  return true; // if the value is valid, bool is true.
+}
 
-let myNum = prompt(" Please enter a number between 5 and 20:"); // ask the user for a number between 5 - 20 and store it.
+function checkAmount(amount) { // TLhis is to catch incorrect number amounts, error handling in a way. Limiting.
+  if (amount < 5 || amount > 500) { // If the amount is not between these two numbers, then
+    alert("Please enter an amount between $5 and $500."); // display this message
+    return false; //
+  }
+  return true; // if value is valid, return bool as true
+}
 
-let counter = 1; // We are using a Do While loop here so the loop counters will equal the variable myNum
-do {
-  document.write("Loop counter: " + counter + "<br>"); // Kind of self explanitory
-  counter++;
-} while (counter <= myNum); // do the loop counter until counter is equal to the number stored in myNum
+function calculateTip(amount, quality) { // quality variable and calculations.
+  if (quality === "great") { // is service was great,
+    return amount * 0.2; // leave a 20% tip
+  } else if (quality === "ok") { // if service was only okay
+    return amount * 0.15; // leave a 15% tip
+  } else { // otherwise......
+    return amount * 0.1; // leave a 10% tip
+  }
+}
 
-let subjects = ["Accounting", "Algebra", "Programming", "Art", "Data Analytics"]; // setting up an array for the subjects
+// Get user inputs for the variables!
+let amount = parseFloat(prompt("Please enter the bill total")); //user inputs the total amount for the meal
+let quality = prompt("Was the service quality great, ok, or poor?"); // user enters the service quality
 
-subjects.forEach(function(subject) { // We are displaying the array values in order using foreach()
-  document.write("Subject: " + subject + "<br>"); // displaying everything
-});
-
-document.write("Subjects: " + subjects.join(", ")); //diisplay the array values separated by commas!
+if (checkAmount(amount) && checkQuality(quality)) { // checking user inputs for amount and quality in this line
+  let tip = calculateTip(amount, quality); // calculating the tip
+  tip = tip.toFixed(2); // We are limiting the decimal points to just two points. 60.00, or 23.45.
+  alert("The tip is $" + tip); // display a popup for the tip.
+} //ENDDDDD

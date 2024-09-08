@@ -1,35 +1,37 @@
-function checkQuality(quality) { // this is a function that will check if the entered service quality value is valid.
-  if (quality !== "great" && quality !== "ok" && quality !== "poor") { // If not acceptable answer,
-    alert("Please enter 'great', 'ok', or 'poor'."); // display this error message asking the user to try again
-    return false; //
-  }
-  return true; // if the value is valid, bool is true.
-}
+// This line of code is Creating a literal object named myDog
+const myDog = { // includes the variosu attributes assosociated with Scooby Doo
+    name: "Scooby Doo",
+    breed: "Great Dane",
+    color: "Brown",
+    owner: "Shaggy",
+    show: "Scooby Doo",
+    mySound: "Scooby Dooby Doo!"
+}; //closing brackets from line 2
 
-function checkAmount(amount) { // TLhis is to catch incorrect number amounts, error handling in a way. Limiting.
-  if (amount < 5 || amount > 500) { // If the amount is not between these two numbers, then
-    alert("Please enter an amount between $5 and $500."); // display this message
-    return false; //
-  }
-  return true; // if value is valid, return bool as true
-}
+// Displaying the dog's properties in a popup messagfe to the user when they first visit the site. String concatenation
+alert(`Ladies and Gentleman and everyone, meet the legendary ${myDog.name}! ${myDog.name} is a ${myDog.breed} from the classic tv show "${myDog.show}". He is ${myDog.color} in color and is owned by ${myDog.owner}, who is often rumored to be a god. When ${myDog.name} speaks, he often says: "${myDog.mySound}"`);
 
-function calculateTip(amount, quality) { // quality variable and calculations.
-  if (quality === "great") { // is service was great,
-    return amount * 0.2; // leave a 20% tip
-  } else if (quality === "ok") { // if service was only okay
-    return amount * 0.15; // leave a 15% tip
-  } else { // otherwise......
-    return amount * 0.1; // leave a 10% tip
-  }
-}
+// PART 2
+// PART 2
+//PART 2
+//PART 2
 
-// Get user inputs for the variables!
-let amount = parseFloat(prompt("Please enter the bill total")); //user inputs the total amount for the meal
-let quality = prompt("Was the service quality great, ok, or poor?"); // user enters the service quality
+// Constructor function for creating dog objects
+function Dog(name, breed, color, owner, show, mySound, canTalk) { // constructor function right here!!!
+    this.name = name;
+    this.breed = breed;
+    this.color = color;
+    this.owner = owner;
+    this.show = show;
+    this.mySound = mySound;
+    this.canTalk = canTalk;
+    this.myGreeting = function() { // This is storing the message below. When called, it will display this string concatenation
+        return `Hello there, my name is ${this.name}, and I am a beloved ${this.breed} from the classic hit tv show ${this.show}. I am ${this.color} in color and my owner is ${this.owner}. When I speak, one of the classic things I say is: ${this.mySound}. Can I talk? ${this.canTalk ? "Of course I can." : "No, I can't."}`;
+    };
+} // closing the bracket from line 20
 
-if (checkAmount(amount) && checkQuality(quality)) { // checking user inputs for amount and quality in this line
-  let tip = calculateTip(amount, quality); // calculating the tip
-  tip = tip.toFixed(2); // We are limiting the decimal points to just two points. 60.00, or 23.45.
-  alert(`For a service of $${amount}, a ${quality} service quality suggests a tip of $${tip}.`); // display a popup for the tip.
-} //ENDDDDD
+// Creating an instance of the Dog object
+const myDogConst = new Dog("Scooby Doo", "Great Dane", "Brown", "Shaggy", "Scooby Doo", "Scooby Dooby Doo!", true);
+
+// Displaying the dog's greeting using the myGreeting method in a popup
+alert(myDogConst.myGreeting()); // greeting function called, then it pulls in the info stored in myDogConst right above
